@@ -1,16 +1,101 @@
 package homework;
 
-public class CoffeeMachineTwo extends CoffeeMachineOne {
+public class CoffeeMachineTwo extends CoffeeMachine {
     private int milk;
     private int maxMilk;
+    private boolean ready;
+    private int water;
+    private int coffee;
+    private int waste;
 
     public CoffeeMachineTwo(int maxCoffee, int maxWater, int maxWaste, int maxMilk) {
         super(maxCoffee, maxWater, maxWaste);
         this.maxMilk = maxMilk;
     }
 
-    @Override
-    public void makeEspresso() {
-        System.out.println("Incorrect function");
+    // Заполняется молоком
+    public void addMilk(int milk){
+        this.milk=milk;
+        if(this.milk>maxMilk)
+        {
+            this.milk=maxMilk;
+        }
     }
+
+    //включается
+    public void on(){
+        ready=true;
+    }
+
+    //выключается
+    public void off(){
+        ready=false;
+    }
+
+    //делает Латте
+    public void makeLatte(int milk){
+        if(ready)
+        {
+            if(water>=30)
+            {
+                if(coffee>=22)
+                {
+                    if(this.milk>=milk)
+                    {
+                        water-=30;
+                        coffee-=22;
+                        addWaste(22);
+                        this.milk-=milk;
+                        System.out.println("Take your Latte\n");
+                    }
+                    else
+                    {
+                        System.err.println("Not enough milk");
+                    }
+                }
+                else
+                {
+                    System.err.println("Not enough coffee\n");
+                }
+            }
+            else
+            {
+                System.err.println("Not enough water\n");
+            }
+        }
+    }
+
+    //делаеет Капучино
+    public void makeCapuchino(int milk){
+        if(ready)
+        {
+            if(water>=30)
+            {
+                if(coffee>=22)
+                {
+                    if(this.milk>=milk)
+                    {
+                        water-=30;
+                        coffee-=22;
+                        addWaste(22);
+                        this.milk-=milk;
+                        System.out.println("Take your Capuchino\n");
+                    }
+                    else
+                    {
+                        System.err.println("Not enough milk");
+                    }
+                }
+                else
+                {
+                    System.err.println("Not enough coffee\n");
+                }
+            }
+            else
+            {
+                System.err.println("Not enough water\n");
+            }
+        }
+    }
+
 }

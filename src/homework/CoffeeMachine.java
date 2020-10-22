@@ -33,11 +33,25 @@ abstract class CoffeeMachine {
         }
     }
 
+    // бак для отработаного кофе может быть переполнен
     public void addWaste(int waste) {
         if(this.waste + waste >= this.maxWaste) {
-            System.err.println("Переполнен бак с отработанным кофе");
+            System.err.println("Waste tank is full\n");
         } else {
             this.waste += waste;
+        }
+    }
+
+    // бак для отработаного кофе можно очистить
+    public void clearWaste(){
+        if(this.waste>0)
+        {
+            this.waste=0;
+            System.out.println("Waste tank is cleared\n");
+        }
+        else
+        {
+            System.out.println("Waste tank is empty\n");;
         }
     }
 
@@ -95,4 +109,29 @@ abstract class CoffeeMachine {
             }
         }
     }
+
+    public void makeAmericano(){
+        if(ready)
+        {
+            if(water>100)
+            {
+                if(coffee>22)
+                {
+                    water-=100;
+                    coffee-=22;
+                    addWaste(22);
+                    System.out.println("Taker Americano\n");
+                }
+                else
+                {
+                    System.err.println("Not enough coffee\n");
+                }
+            }
+            else
+            {
+                System.err.println("Not enough water\n");
+            }
+        }
+    }
+
 }
