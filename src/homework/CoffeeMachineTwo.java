@@ -1,6 +1,7 @@
 package homework;
 
 public class CoffeeMachineTwo extends CoffeeMachine {
+    // Зачем здес объявляются снова поля?
     private int milk;
     private int maxMilk;
     private boolean ready;
