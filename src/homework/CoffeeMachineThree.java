@@ -1,6 +1,7 @@
 package homework;
 
 public class CoffeeMachineThree extends CoffeeMachineTwo {
+    // Зачем здесь эти поля?
     private boolean ready;
     private int milk;
     private int maxMilk;
@@ -15,12 +16,12 @@ public class CoffeeMachineThree extends CoffeeMachineTwo {
         this.maxZern=maxZern;
     }
 
-    //включается
+    // зачем здесь этот метод?
     public void on(){
         ready=true;
     }
 
-    //выключается
+    // зачем здесь этот метод
     public void off(){
         ready=false;
     }
@@ -44,7 +45,7 @@ public class CoffeeMachineThree extends CoffeeMachineTwo {
         }
     }
 
-    //делает Латте
+    // зачем здесь этот метод
     public void makeLatte(int milk){
         if(ready)
         {
@@ -90,7 +91,7 @@ public class CoffeeMachineThree extends CoffeeMachineTwo {
         }
     }
 
-    //делаеет Капучино
+    // зачем здесь этот метод??
     public void makeCapuchino(int milk){
         if(ready)
         {
