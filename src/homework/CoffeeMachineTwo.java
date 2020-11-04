@@ -22,12 +22,12 @@ public class CoffeeMachineTwo extends CoffeeMachine {
         }
     }
 
-    //включается
+    // Зачем здесь нужно переопределять метод? он такой же, как и в CoffeeMachine
     public void on(){
         ready=true;
     }
 
-    //выключается
+    // Зачем здесь нужно переопределять метод? он такой же, как и в CoffeeMachine
     public void off(){
         ready=false;
     }
